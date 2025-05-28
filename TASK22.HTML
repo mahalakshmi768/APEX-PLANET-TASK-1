@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML, CSS, JS Skill Builder</title>
+    <style>
+            body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f7fa;
+            color: #222;
+        }
+        /* Flexbox Navigation */
+        
+        header {
+            background: #222;
+            color: #fff;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #00bfff;
+        }
+        
+        main {
+            max-width: 1100px;
+            margin: 2rem auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 0 1rem;
+            .contact-section {
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+                padding: 2rem 1.5rem;
+                align-self: start;
+            }
+            .contact-section h2 {
+                margin-bottom: 1rem;
+                color: #007bff;
+                text-align: center;
+            }
+            .contact-form label {
+                display: block;
+                margin: 0.7rem 0 0.2rem;
+                font-weight: 600;
+            }
+            .contact-form input,
+            .contact-form textarea {
+                width: 100%;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            .contact-form textarea {
+                min-height: 80px;
+            }
+            .contact-form button {
+                width: 100%;
+                padding: 0.7rem;
+                background: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            .contact-form button:hover {
+                background: #0056b3;
+            }
+            .todo-section {
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+                padding: 2rem 1.5rem;
+            }
+            .todo-section h2 {
+                margin-bottom: 1rem;
+                color: #28a745;
+                text-align: center;
+            }
+            #todoForm {
+                display: flex;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            #todoForm input[type="text"] {
+                flex: 1;
+                padding: 0.5rem;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1rem;
+            }
+            #todoForm button {
+                padding: 0.5rem 1rem;
+                background: #28a745;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background 0.2s;
+            }
+            #todoForm button:hover {
+                background: #176d36;
+            }
+            #todoList {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+            #todoList li {
+                background: #f9f9f9;
+                margin-bottom: 0.5rem;
+                padding: 0.5rem 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-radius: 4px;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+                font-size: 1rem;
+                transition: background 0.2s;
+            }
+            #todoList li.completed {
+                text-decoration: line-through;
+                color: #aaa;
+                background: #e6e6e6;
+            }
+            #todoList li button {
+                background: #dc3545;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                padding: 0.3rem 0.7rem;
+                transition: background 0.2s;
+            }
+            #todoList li button:hover {
+                background: #a71d2a;
+            }
+            footer {
+                background: #222;
+                color: #fff;
+                text-align: center;
+                padding: 1rem 0;
+                margin-top: 2rem;
+            }
+            @media (max-width: 900px) {
+                main {
+                    grid-template-columns: 1fr;
+                }
+                .navbar {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .nav-links {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    margin-top: 0.5rem;
+                }
+            }
+            @media (max-width: 600px) {
+                main {
+                    padding: 0;
+                }
+                .contact-section,
+                .todo-section {
+                    padding: 1rem 0.5rem;
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">SKILLS SET COACHING CENTRE</div>
+            <ul class="nav-links">
+                <li><a href="#contactForm">Contact</a></li>
+                <li><a href="#todoSection">To-Do List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Form Section -->
+        <section class="contact-section" id="contactForm">
+            <h2>Contact Us</h2>
+            <form class="contact-form" novalidate>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required />
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section class="todo-section" id="todoSection">
+            <h2>My To-Do List</h2>
+            <form id="todoForm">
+                <input type="text" id="taskInput" placeholder="Add new task..." required />
+                <button type="submit">Add</button>
+            </form>
+            <ul id="todoList"></ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 SkillBuilder. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Form Validation & To-Do List -->
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const message = this.message.value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let errors = [];
+            if (name === '') errors.push('Name is required.');
+            if (email === '') errors.push('Email is required.');
+            else if (!emailPattern.test(email)) errors.push('Please enter a valid email address.');
+            if (message === '') errors.push('Message is required.');
+            if (errors.length > 0) alert(errors.join('\n'));
+            else {
+                alert('Thank you for contacting us, ' + name + '!');
+                this.reset();
+            }
+        });
+        const todoForm = document.getElementById('todoForm');
+        const taskInput = document.getElementById('taskInput');
+        const todoList = document.getElementById('todoList');
+        todoForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const taskText = taskInput.value.trim();
+            if (taskText === '') return;
+            const li = document.createElement('li');
+            li.textContent = taskText;
+            const delBtn = document.createElement('button');
+            delBtn.textContent = 'Delete';
+            li.appendChild(delBtn);
+            todoList.appendChild(li);
+            taskInput.value = '';
+            delBtn.addEventListener('click', () => {
+                todoList.removeChild(li);
+            });
+            li.addEventListener('click', function(e) {
+                if (e.target !== delBtn) li.classList.toggle('completed');
+            });
+        });
+    </script>
+</body>
+
+</html>
